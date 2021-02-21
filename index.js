@@ -64,7 +64,7 @@ app.use(function (req, res){
 	res.status(404)
     res.redirect("error")
 })
-app.listen(1000, function(){
+app.listen(1248, function(){
     console.log("Server running on port 1000!")
 })
 
