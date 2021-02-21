@@ -65,7 +65,7 @@ app.use(function (req, res){
     res.redirect("error")
 })
 app.listen(1248, function(){
-    console.log("Server running on port 1000!")
+    console.log("Server running on port 1248!")
 })
 
 /**
