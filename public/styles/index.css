@@ -1,0 +1,37 @@
+/** General */
+html{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 4em 0 4em 0;
+    background-color: rgb(248,126,43);
+    color: lightgrey;
+}
+
+/** Main */
+div#main{
+    width: 80%;
+    max-width: 1152px;
+    min-width: 768px;
+    border: 2px solid slategrey;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    padding: 1em;
+    text-align: left;
+    background-color: rgb(47,49,54);
+}
+
+h1{
+    color:rgb(248,126,43);
+    text-align: center;
+    text-shadow: 1px 1px 3px black;
+    padding-bottom: 0.3em;
+}
+
+.center{
+    text-align: center;
+}
+
+img.planning{
+    width: 100%;
+}

@@ -1,0 +1,17 @@
+<script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+<h1>Stream Twitch</h1>
+<div id="twitch-embed" class="center"/>
+<script type="text/javascript">
+    const width = document.querySelector("#main").offsetWidth - 46
+    new Twitch.Embed("twitch-embed", {
+        width: width,
+        height: width/(16/9),
+        channel: "tacticalmonkeyesport",
+    })
+</script>
+
+<br/><br/><br/>
+
+<h1>Planning de la Semaine</h1>
+<img class="planning" src="./images/planning.png"/>
