@@ -34,7 +34,7 @@ const joueurs = new Array(
 module.exports = class Membres{
 
     static getPage(req, res){
-        console.log(`${req.headers["x-forwarded-for"] || req.connection.remoteAddress} asked for amongus`)
+        console.log(`${req.headers["x-forwarded-for"] || req.connection.remoteAddress} asked for membres`)
         res.render("membres", {layout: "layout",
             admins: admins,
             joueurs: joueurs,
