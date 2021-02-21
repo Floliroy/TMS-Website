@@ -9,14 +9,14 @@ header{
     background-color: rgb(47,49,54);
 }
 
-a{
+header a{
     color: inherit;
     margin: 0 15px 0 15px;
     text-decoration: none;
     position: relative;
 }
 
-a::after{
+header a::after{
     content: ' ';
     left: 0;
     bottom: -5px;
@@ -27,7 +27,7 @@ a::after{
     background: rgb(248,126,43);
 }
 
-a:hover::after{
+header a:hover::after{
     width: 100%;
     transition: width 0.2s;
 }
