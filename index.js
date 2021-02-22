@@ -3,8 +3,6 @@
  */
 const moment = require('moment')
 const express = require('express')
-const Handlebars = require('handlebars')
-const handlebars = require('express-handlebars')
 
 /**
  * My own libraries
@@ -13,15 +11,11 @@ const Membres = require('./modules/membres')
 
 
 /**
- * Setup the handlebars lib
+ * Setup the express lib
  */
 const app = express()
 app.use(express.urlencoded({extended: true}))
-app.set("view engine", "handlebars")
-app.engine("handlebars", handlebars({
-    layoutsDir: __dirname + "/views/layouts/",
-    partialsDir: __dirname + "/views/partials/",
-}))
+app.set("view engine", "ejs")
 
 /**
  * Pages
@@ -31,7 +25,7 @@ function getPage(page, req, res){
         console.log(`${req.headers["x-forwarded-for"] || req.connection.remoteAddress} asked for ${page}`)
     }
 
-    res.render(page, {layout: "layout"})
+    res.render("partials/layout", {body: page})
 }
 
 app.get("/", function(req, res){

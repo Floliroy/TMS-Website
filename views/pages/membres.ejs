@@ -1,0 +1,44 @@
+<%
+function getImage(name){
+    const path = `${__dirname.replace("modules", "")}public/images/${name.toLowerCase().replace(" ", "")}.png`
+    return fs.existsSync(path) ? `./images/${name.toLowerCase().replace(" ", "")}.png` : "./logo.png"
+}
+%>
+
+<h1>Le Staff</h1>
+<%for(const membre of admins){%>
+    <table>
+        <tr>
+            <td>
+                <img src="<%=getImage(membre.pseudo)%>" width="60"/>
+            </td>
+            <td>
+                <strong><%=membre.pseudo%></strong><br/>
+                <%for(const role of membre.roles){%>
+                    <i><%=role%></i><br/>
+                <%}%>
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <br/>
+<%}%>
+
+<h1>Les Joueurs</h1>
+<%for(const membre of joueurs){%>
+    <table>
+        <tr>
+            <td>
+                <img src="<%=getImage(membre.pseudo)%>" width="60"/>
+            </td>
+            <td>
+                <strong><%=membre.pseudo%></strong><br/>
+                <%for(const role of membre.roles){%>
+                    <i><%=role%></i><br/>
+                <%}%>
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <br/>
+<%}%>

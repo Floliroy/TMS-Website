@@ -1,4 +1,3 @@
-const fs = require('fs')
 class Membre{
     constructor(pseudo, roles){
         this.pseudo = pseudo
@@ -35,15 +34,11 @@ module.exports = class Membres{
 
     static getPage(req, res){
         console.log(`${req.headers["x-forwarded-for"] || req.connection.remoteAddress} asked for membres`)
-        res.render("membres", {layout: "layout",
+        res.render("partials/layout", {body: "membres",
             admins: admins,
             joueurs: joueurs,
-            helpers: {
-                getImage: function(name){
-                    const path = `${__dirname.replace("modules", "")}public/images/${name.toLowerCase().replace(" ", "")}.png`
-                    return fs.existsSync(path) ? `./images/${name.toLowerCase().replace(" ", "")}.png` : "./logo.png"
-                }
-            }
+            fs: require('fs'),
+            __dirname: __dirname
         })
     }
 
