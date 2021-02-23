@@ -16,6 +16,18 @@ header a{
     position: relative;
 }
 
+header img.logo{
+    height: 3em;
+    position: fixed;
+    top: 8px;
+    margin-left: -55px;
+}
+
+header a.selected{
+    color: rgb(248,126,43);
+    text-shadow: 1px 1px 1px black;
+}
+
 header a::after{
     content: ' ';
     left: 0;

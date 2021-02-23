@@ -1,44 +1,102 @@
-<%
-function getImage(name){
-    const path = `${__dirname.replace("modules", "")}public/images/${name.toLowerCase().replace(" ", "")}.png`
-    return fs.existsSync(path) ? `./images/${name.toLowerCase().replace(" ", "")}.png` : "./logo.png"
-}
-%>
+<link rel="stylesheet" type="text/css" href="./styles/membres.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <h1>Le Staff</h1>
-<%for(const membre of admins){%>
-    <table>
-        <tr>
-            <td>
-                <img src="<%=getImage(membre.pseudo)%>" width="60"/>
-            </td>
-            <td>
-                <strong><%=membre.pseudo%></strong><br/>
-                <%for(const role of membre.roles){%>
-                    <i><%=role%></i><br/>
-                <%}%>
-            </td>
-        </tr>
-    </table>
-    <br/>
-    <br/>
-<%}%>
+<table>
+<%  
+    let newLine = false
+    for(const membre of admins){
+        newLine = !newLine
+        if(newLine){
+%>
+            <tr>
+        <%}%>
+                <td>
+                    <img src="<%=membre.image ? membre.image : "./logo.png"%>" class="imgProfil"/>
+                </td>
+                <td>
+                    <h2><%=membre.pseudo%></h2>
+                    <%if(membre.twitter){%>
+                        &nbsp;
+                        <a href="<%=membre.twitter%>" target="_blank"><i class="fa">&#xf099;</i></a>
+                    <%}%>
+                    <%if(membre.facebook){%>
+                        &nbsp;
+                        <a href="<%=membre.facebook%>" target="_blank"><i class="fa">&#xf082;</i></a>
+                    <%}%>
+                    <%if(membre.instagram){%>
+                        &nbsp;
+                        <a href="<%=membre.instagram%>" target="_blank"><i class="fa">&#xf16d;</i></a>
+                    <%}%>
+                    <%if(membre.twitch){%>
+                        &nbsp;
+                        <a href="<%=membre.twitch%>" target="_blank"><i class="fa">&#xf1e8;</i></a>
+                    <%}%>
+                </td>
+                <td>
+                    <br/>
+                    <%for(const role of membre.roles){%>
+                        <small><em><%=role%></em></small><br/>
+                    <%}%>
+                </td>
+                <td>
+                    <%if(newLine){%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%}%>
+                </td>
+        <%if(!newLine){%>
+            </tr>
+<%
+        }
+    }
+%>
+</table>
+<br/><br/><br/>
+
 
 <h1>Les Joueurs</h1>
-<%for(const membre of joueurs){%>
-    <table>
-        <tr>
-            <td>
-                <img src="<%=getImage(membre.pseudo)%>" width="60"/>
-            </td>
-            <td>
-                <strong><%=membre.pseudo%></strong><br/>
-                <%for(const role of membre.roles){%>
-                    <i><%=role%></i><br/>
-                <%}%>
-            </td>
-        </tr>
-    </table>
-    <br/>
-    <br/>
-<%}%>
+<table>
+<%  
+    newLine = false
+    for(const membre of joueurs){
+        newLine = !newLine
+        if(newLine){
+%>
+            <tr>
+        <%}%>
+                <td>
+                    <img src="<%=membre.image ? membre.image : "./logo.png"%>" class="imgProfil"/>
+                </td>
+                <td>
+                    <h2><%=membre.pseudo%></h2>
+                    <%if(membre.twitter){%>
+                        &nbsp;
+                        <a href="<%=membre.twitter%>" target="_blank"><i class="fa">&#xf099;</i></a>
+                    <%}%>
+                    <%if(membre.facebook){%>
+                        &nbsp;
+                        <a href="<%=membre.facebook%>" target="_blank"><i class="fa">&#xf082;</i></a>
+                    <%}%>
+                    <%if(membre.instagram){%>
+                        &nbsp;
+                        <a href="<%=membre.instagram%>" target="_blank"><i class="fa">&#xf16d;</i></a>
+                    <%}%>
+                    <%if(membre.twitch){%>
+                        &nbsp;
+                        <a href="<%=membre.twitch%>" target="_blank"><i class="fa">&#xf1e8;</i></a>
+                    <%}%>
+                </td>
+                <td>
+                    <br/>
+                    <%for(const role of membre.roles){%>
+                        <small><em><%=role%></em></small><br/>
+                    <%}%>
+                </td>
+                <td>
+                    <%if(newLine){%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%}%>
+                </td>
+        <%if(!newLine){%>
+            </tr>
+<%
+        }
+    }
+%>
+</table>

@@ -3,6 +3,7 @@
  */
 const moment = require('moment')
 const express = require('express')
+const turbolinks = require('turbolinks-express')
 
 /**
  * My own libraries
@@ -58,6 +59,8 @@ app.use(function (req, res){
 	res.status(404)
     res.redirect("error")
 })
+app.use(turbolinks.redirect)
+app.use(turbolinks.location)
 app.listen(1248, function(){
     console.log("Server running on port 1248!")
 })

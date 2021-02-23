@@ -1,33 +1,78 @@
 class Membre{
-    constructor(pseudo, roles){
+    constructor(pseudo, roles, image, twitter, facebook, instagram, twitch){
         this.pseudo = pseudo
         this.roles = roles
+        this.image = image
+        this.twitter = twitter
+        this.facebook = facebook
+        this.instagram = instagram
+        this.twitch = twitch
     }
 }
 
 const admins = new Array(
-    new Membre("Zyguan", new Array("Président", "Joueur")),
-    new Membre("Shuku", new Array("Co-Président")),
-    new Membre("Konogan", new Array("Manager TFT", "Streamer", "Joueur")),
-    new Membre("Wazzy", new Array("Manager Stream", "Streamer")),
-    new Membre("Floliroy", new Array("Graphiste", "Web Dev", "Streamer", "Joueur")),
-    new Membre("Cripito", new Array("Orga Event")),
-    new Membre("Nairod", new Array("Orga Event", "Joueur")),
-    new Membre("Gazalhi", new Array("Community Manager")),
+    new Membre("Zyguan", new Array("Président", "Joueur"), null,
+        null, null, null, null
+    ),
+    new Membre("Shuku", new Array("Co-Président"), null,
+        null, null, null, null
+    ),
+    new Membre("Konogan", new Array("Manager TFT", "Streamer", "Joueur"), null,
+        null, null, null, null
+    ),
+    new Membre("Wazzy", new Array("Manager Stream", "Streamer"), null,
+        null, null, null, null
+    ),
+    new Membre("Floliroy", new Array("Graphiste", "Web Dev", "Streamer", "Joueur"), `./images/floliroy.png`,
+        "https://twitter.com/Floliroy", "https://www.facebook.com/floliroyjenkins", null, "https://www.twitch.tv/floleeroyj"
+    ),
+    new Membre("Cripito", new Array("Orga Event"), null,
+        null, null, null, null
+    ),
+    new Membre("Nairod", new Array("Orga Event", "Joueur"), null,
+        null, null, null, null
+    ),
+    new Membre("Gazalhi", new Array("Community Manager"), null,
+        null, null, null, null
+    ),
 )
 const joueurs = new Array(
-    new Membre("Aaron", new Array("Joueur")),
-    new Membre("Crazy Genius", new Array("Joueur")),
-    new Membre("Strelok", new Array("Joueur")),
-    new Membre("ACKK", new Array("Joueur")),
-    new Membre("Frobei", new Array("Joueur")),
-    new Membre("Martin", new Array("Joueur")),
-    new Membre("Rakluuhr", new Array("Streamer", "Joueur")),
-    new Membre("Ronflex", new Array("Streamer", "Joueur")),
-    new Membre("Sirutop", new Array("Joueur")),
-    new Membre("Tragoedia", new Array("Joueur")),
-    new Membre("Verigular", new Array("Joueur")),
-    new Membre("Zel", new Array("Streamer", "Joueur")),
+    new Membre("Aaron", new Array("Joueur"), null,
+        null, null, null, null
+    ),
+    new Membre("Crazy Genius", new Array("Joueur"), null,
+        null, null, null, null
+    ),
+    new Membre("Strelok", new Array("Joueur"), null,
+        null, null, null, null
+    ),
+    new Membre("ACKK", new Array("Joueur"), null,
+        null, null, null, null
+    ),
+    new Membre("Frobei", new Array("Joueur"), null,
+        null, null, null, null
+    ),
+    new Membre("Martin", new Array("Joueur"), null,
+        null, null, null, null
+    ),
+    new Membre("Rakluuhr", new Array("Streamer", "Joueur"), null,
+        null, null, null, null
+    ),
+    new Membre("Ronflex", new Array("Streamer", "Joueur"), null,
+        null, null, null, null
+    ),
+    new Membre("Sirutop", new Array("Joueur"), null,
+        null, null, null, null
+    ),
+    new Membre("Tragoedia", new Array("Joueur"), null,
+        null, null, null, null
+    ),
+    new Membre("Verigular", new Array("Joueur"), null,
+        null, null, null, null
+    ),
+    new Membre("Zel", new Array("Streamer", "Joueur"), null,
+        null, null, null, null
+    ),
 )
 
 module.exports = class Membres{
