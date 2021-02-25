@@ -8,16 +8,19 @@
     <link rel="stylesheet" type="text/css" href="./styles/index.css" />
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="./dynamic.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script type="text/javascript" src="./dynamic.js" defer></script>
 </head>
-<body>
+<div class="loader"></div>
+<body data-barba="wrapper">
     <%-include("header")%>
     <br/>
 
-    <div id="main" class="animateIn">
+    <div id="main" data-barba="container">
         <%-include(`../pages/${body}`)%>
     </div>
-    
+
     <br/>
     <%-include("footer")%>
 </body>
