@@ -1,12 +1,12 @@
-<script src="https://player.twitch.tv/js/embed/v1.js"></script>
+<script src="https://embed.twitch.tv/embed/v1.js"></script>
 
 <h1>Stream Twitch</h1>
-<div id="twitch-embed" class="center"/>
+<div id="twitch-embed" class="center"></div>
 <script type="text/javascript">
     const width = document.querySelector("#main").offsetWidth - 46
-    new Twitch.Player("twitch-embed", {
-        width: width,
-        height: width/(16/9),
+    new Twitch.Embed("twitch-embed", {
+        width: "100%",
+        height: (width-340)/(16/9),
         channel: "tacticalmonkeyesport",
         parent: ["tms.floliroy.fr"],
     })
