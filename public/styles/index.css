@@ -4,6 +4,11 @@ html{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 4em 0 4em 0;
     color: lightgrey;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+    display: none;
 }
 
 .background{

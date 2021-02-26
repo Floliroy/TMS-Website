@@ -70,10 +70,10 @@ const joueurs = new Array(
     new Membre("Tragoedia", new Array("Joueur"), null,
         null, null, null, null
     ),
-    new Membre("Verigular", new Array("Joueur"), null,
+    new Membre("Verigular", new Array("Streamer", "Joueur"), null,
         "https://twitter.com/verigular", null, null, null
     ),
-    new Membre("Zel", new Array("Streamer", "Joueur"), null,
+    new Membre("Zel", new Array("Joueur"), null,
         "https://twitter.com/TMSZel", null, null, null
     ),
 )
