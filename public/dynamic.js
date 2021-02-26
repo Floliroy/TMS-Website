@@ -17,10 +17,11 @@ window.setTimeout(offsetAnchor, 0)
  * Set page transition
  */
 let loader = $(".loader")
+//Function at beginning of page change
 function loaderIn() {
     return gsap.fromTo(loader,
         {
-            rotation: 30,
+            rotation: -30,
             scaleX: 0,
             xPercent: -5
         },
@@ -33,27 +34,30 @@ function loaderIn() {
             transformOrigin: 'left center'
         })
 }
+//Function at end of page change
 function loaderAway() {
     return gsap.to(loader, {
         duration: 0.8,
         scaleX: 0,
         xPercent: 5,
-        rotation: 0,
+        rotation: 30,
         transformOrigin: 'right center',
         ease: 'power4.inOut'
     })
 }
+//Init of page change div animation
 gsap.set(loader, {
     scaleX: 0,
-    rotation: 30,
+    rotation: -30,
     xPercent: -5,
-    yPercent: -50,
+    yPercent: 50,
     transformOrigin: 'left center',
     autoAlpha: 1
 })
 barba.hooks.enter(function(){
-    window.scrollTo(window.scrollX, 0);
+    window.scrollTo(window.scrollX, 0)
 })
+//Recreate twitch embed player
 barba.hooks.after(function(){
     if($("#twitch-embed").length){
         const width = document.querySelector("#main").offsetWidth - 46
@@ -65,13 +69,14 @@ barba.hooks.after(function(){
         })
     }
 })
+//Barba init
 barba.init({
     transitions: [{
         async leave() {
-            await loaderIn();
+            await loaderIn()
         },
         enter() {
-            loaderAway();
+            loaderAway()
         }
     }]
 })
@@ -82,4 +87,16 @@ barba.init({
 $(document).on('click', 'header a', function(event) {
     $(".selected").removeClass("selected")
     $(event.currentTarget).addClass("selected")
+})
+
+/**
+ * Move background
+ */
+const movementStrength = 50
+$(document).mousemove(function(event){
+    const height = movementStrength / $(window).height()
+    const width = movementStrength / $(window).width()
+    const newvalueX = width * (event.pageX - ($(window).width() / 2)) * - 1 - 25
+    const newvalueY = height * (event.pageY - ($(window).height() / 2)) * - 1 - 50
+    $(".background").css("background-position", `calc(50% - ${newvalueX}px) calc(50% - ${newvalueY}px)`)
 })
