@@ -94,9 +94,9 @@ $(document).on('click', 'header a', function(event) {
  */
 const movementStrength = 50
 $(document).mousemove(function(event){
-    const height = movementStrength / $(window).height()
     const width = movementStrength / $(window).width()
-    const newvalueX = width * (event.pageX - ($(window).width() / 2)) * - 1 - 25
-    const newvalueY = height * (event.pageY - ($(window).height() / 2)) * - 1 - 50
+    const height = movementStrength / $(window).height()
+    const newvalueX = width * (event.clientX - ($(window).width() / 2)) * - 1 - 25
+    const newvalueY = height * (event.clientY - ($(window).height() / 2)) * - 1 - 50
     $(".background").css("background-position", `calc(50% - ${newvalueX}px) calc(50% - ${newvalueY}px)`)
 })
