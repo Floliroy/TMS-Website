@@ -2,15 +2,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <h1>Le Staff</h1>
-<table>
 <%  
-    let newLine = false
     for(const membre of admins){
-        newLine = !newLine
-        if(newLine){
 %>
+        <table class="membre">
             <tr>
-        <%}%>
                 <td>
                     <img src="<%=membre.image ? membre.image : "./logo.png"%>" class="imgProfil"/>
                 </td>
@@ -34,34 +30,26 @@
                     <%}%>
                 </td>
                 <td>
-                    <br/>
+                    <%if(membre.roles.length < 4){%><br/><%}%>   
                     <%for(const role of membre.roles){%>
                         <small><em><%=role%></em></small><br/>
                     <%}%>
                 </td>
-                <td>
-                    <%if(newLine){%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%}%>
-                </td>
-        <%if(!newLine){%>
             </tr>
+        </table>
 <%
-        }
     }
 %>
-</table>
+<table class="membre"></table>
 <br/><br/><br/>
 
 
 <h1>Les Joueurs</h1>
-<table>
 <%  
-    newLine = false
     for(const membre of joueurs){
-        newLine = !newLine
-        if(newLine){
 %>
+        <table class="membre">
             <tr>
-        <%}%>
                 <td>
                     <img src="<%=membre.image ? membre.image : "./logo.png"%>" class="imgProfil"/>
                 </td>
@@ -85,18 +73,14 @@
                     <%}%>
                 </td>
                 <td>
-                    <br/>
+                    <%if(membre.roles.length < 4){%><br/><%}%>   
                     <%for(const role of membre.roles){%>
                         <small><em><%=role%></em></small><br/>
                     <%}%>
                 </td>
-                <td>
-                    <%if(newLine){%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%}%>
-                </td>
-        <%if(!newLine){%>
             </tr>
+        </table>
 <%
-        }
     }
 %>
-</table>
+<table class="membre"></table>

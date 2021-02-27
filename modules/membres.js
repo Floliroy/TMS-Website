@@ -32,7 +32,7 @@ const admins = new Array(
     new Membre("Nairod", new Array("Orga Event", "Joueur"), null,
         "https://twitter.com/NairodTV", null, null, null
     ),
-    new Membre("Gazalhi", new Array("Community Manager"), null,
+    new Membre("Gazalhi", new Array("Community Manager"), "https://pbs.twimg.com/profile_images/1277300545577979905/oHaP1uae.jpg",
         "https://twitter.com/Hg1er", null, null, null
     ),
 )
@@ -40,17 +40,17 @@ const joueurs = new Array(
     new Membre("Aaron", new Array("Joueur"), null,
         null, null, null, null
     ),
-    new Membre("Crazy Genius", new Array("Joueur"), null,
+    new Membre("Crazy Genius", new Array("Joueur"), "https://pbs.twimg.com/profile_images/1354444895872831489/_Ttc0_Mz.jpg",
         "https://twitter.com/CrazyGeniusTV", null, null, "https://www.twitch.tv/crazygeniustv"
     ),
-    new Membre("Strelok", new Array("Joueur"), null,
+    new Membre("Strelok", new Array("Joueur"), "https://pbs.twimg.com/profile_images/1351477080765190148/jhXspoiq.jpg",
         "https://twitter.com/StrelokTms", null, null, null
     ),
     new Membre("ACKK", new Array("Joueur"), null,
         "https://twitter.com/tftackk", null, null, null
     ),
-    new Membre("Frobei", new Array("Joueur"), null,
-        "https://twitter.com/FrobeiF", null, null, null
+    new Membre("Frobei", new Array("Joueur"), "https://pbs.twimg.com/profile_images/1254013846337007616/Z9KM3ITo.jpg",
+        "https://twitter.com/FrobeiF", null, null, "https://www.twitch.tv/frobei"
     ),
     new Membre("Martin", new Array("Joueur"), null,
         null, null, null, null
@@ -70,10 +70,10 @@ const joueurs = new Array(
     new Membre("Tragoedia", new Array("Joueur"), null,
         null, null, null, null
     ),
-    new Membre("Verigular", new Array("Streamer", "Joueur"), null,
+    new Membre("Verigular", new Array("Streamer", "Joueur"), "https://pbs.twimg.com/profile_images/1287935665557196800/m1JwAGu2.jpg",
         "https://twitter.com/verigular", null, null, null
     ),
-    new Membre("Zel", new Array("Joueur"), null,
+    new Membre("Zel", new Array("Joueur"), "https://pbs.twimg.com/profile_images/1311224786543050753/ZyiMstNK.jpg",
         "https://twitter.com/TMSZel", null, null, null
     ),
 )

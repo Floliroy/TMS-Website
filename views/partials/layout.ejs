@@ -22,17 +22,18 @@ const pageName = new Map()
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
-    <script type="text/javascript" src="./dynamic.js" defer></script>
+    <script type="text/javascript" src="./scripts/dynamic.js"></script>
+    <script type="text/javascript" src="./scripts/barba.js" defer></script>
 </head>
 
-<div class="loader"></div>
-<div class="background"></div>
-
 <body data-barba="wrapper">
+    <div class="loader"></div>
+    <div class="background"></div>
+
     <%-include("header")%>
     <br/>
 
-    <div id="main" data-barba="container">
+    <div id="main" data-barba="container" data-barba-namespace="<%=body%>">
         <%-include(`../pages/${body}`)%>
     </div>
 

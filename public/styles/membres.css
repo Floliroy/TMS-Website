@@ -1,4 +1,20 @@
 img.imgProfil{
     margin: 0.7em 0.3em 0 0;
     width: 80px;
+    border-radius: 50%;
+}
+
+table.membre{
+    background: linear-gradient(70deg, rgb(77, 77, 77) 50%, rgb(248,126,43));
+    display: inline-block;
+    border-radius: 15px;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.7);
+    margin: 5px 0 5px 0;
+    width: 380px;
+}
+
+td:nth-child(2){
+    max-width: 205px;
+    min-width: 165px;
+    height: 95px;
 }
