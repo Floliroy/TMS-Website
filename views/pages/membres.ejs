@@ -1,6 +1,7 @@
 <link rel="stylesheet" type="text/css" href="./styles/membres.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<div class="membres">
 <h1>Le Staff</h1>
 <%  
     for(const membre of admins){
@@ -8,7 +9,7 @@
         <table class="membre">
             <tr>
                 <td>
-                    <img src="<%=membre.image ? membre.image : "./logo.png"%>" class="imgProfil"/>
+                    <img src="<%=membre.image ? membre.image : "./logo.png"%>" class="imgProfil round"/>
                 </td>
                 <td>
                     <h2><%=membre.pseudo%></h2>
@@ -40,7 +41,6 @@
 <%
     }
 %>
-<table class="membre"></table>
 <br/><br/><br/>
 
 
@@ -51,7 +51,7 @@
         <table class="membre">
             <tr>
                 <td>
-                    <img src="<%=membre.image ? membre.image : "./logo.png"%>" class="imgProfil"/>
+                    <img src="<%=membre.image ? membre.image : "./logo.png"%>" class="imgProfil round"/>
                 </td>
                 <td>
                     <h2><%=membre.pseudo%></h2>
@@ -83,4 +83,4 @@
 <%
     }
 %>
-<table class="membre"></table>
+</div>

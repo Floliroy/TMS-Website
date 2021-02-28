@@ -1,7 +1,10 @@
 img.imgProfil{
     margin: 0.7em 0.3em 0 0;
     width: 80px;
-    border-radius: 50%;
+}
+
+div.membres{
+    text-align: center;
 }
 
 table.membre{
@@ -13,7 +16,10 @@ table.membre{
     width: 380px;
 }
 
-td:nth-child(2){
+.membre td{
+    text-align: left;
+}
+.membre td:nth-child(2){
     max-width: 205px;
     min-width: 165px;
     height: 95px;
