@@ -29,8 +29,9 @@ html::-webkit-scrollbar {
     bottom: 0;
     width: 100vw;
     height: 200vh;
+    background-size: 100vw 200vh;
     pointer-events: none;
-    background: url("../images/transition.png");
+    background-image: url("../images/transition.png");
     z-index: 0.9;
     visibility: hidden;
     opacity: 0;

@@ -59,7 +59,7 @@ barba.init({
     transitions: [{
         name: "default",
         async leave() {            
-            $(".loader").css("background", `url("../images/transition.png")`)
+            $(".loader").css("background-image", `url("../images/transition.png")`)
             await loaderIn("default")
         },
         enter() {
@@ -71,7 +71,7 @@ barba.init({
             namespace: ["index"]
         },
         async leave() {
-            $(".loader").css("background", `url("../images/transitionReverse.png")`)
+            $(".loader").css("background-image", `url("../images/transitionReverse.png")`)
             await loaderIn("home")
         },
         enter() {
