@@ -14,7 +14,7 @@ const admins = new Array(
     new Membre("Zyguan", new Array("Président", "Joueur"), null,
         "https://twitter.com/TZyguan", null, null, null
     ),
-    new Membre("Shuku", new Array("Co-Président"), null,
+    new Membre("Shuku", new Array("Co-Président"), "https://cdn.discordapp.com/attachments/788647635779059733/815683371392565278/51V8QGKL_400x400.png",
         "https://twitter.com/TMSShuku", null, null, null
     ),
     new Membre("Konogan", new Array("Manager TFT", "Streamer", "Joueur"), null,

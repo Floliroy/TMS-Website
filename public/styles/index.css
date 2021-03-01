@@ -108,3 +108,16 @@ a{
 td{
     vertical-align: top;
 }
+
+table.betterTable{
+    background-color: rgb(77, 77, 77);
+    border-radius: 15px;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.7);
+    padding: 5px 0 5px 0;
+}
+.betterTable td{
+    padding: 10px;
+}
+.betterTable img{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
