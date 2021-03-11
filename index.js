@@ -4,6 +4,7 @@
 const moment = require('moment')
 const express = require('express')
 const turbolinks = require('turbolinks-express')
+const path = require('path')
 
 /**
  * My own libraries
@@ -47,6 +48,11 @@ app.get("/recrutement", function(req, res){
 app.get("/stream", function(req, res){
     getPage("stream", req, res)
 })
+
+app.get("/planning", function(req, res){
+    res.sendFile(path.resolve("../../Shared/planning.png"))
+})
+
 app.get("/error", function(req, res){
     getPage("error", req, res)
 })
