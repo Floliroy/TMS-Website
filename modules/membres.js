@@ -49,7 +49,7 @@ module.exports = class Membres{
             }
         }
 
-        joueurs.sort()
+        joueurs.sort((a,b) => (a.pseudo > b.pseudo) ? 1 : ((b.pseudo > a.pseudo) ? -1 : 0))
         res.render("partials/layout", {body: "membres",
             admins: admins,
             joueurs: joueurs,
