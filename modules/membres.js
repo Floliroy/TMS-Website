@@ -26,7 +26,7 @@ module.exports = class Membres{
 
         const admins = new Array()
         const joueurs = new Array()
-        
+
         const sheet = doc.sheetsById["0"]
         const rows = await sheet.getRows()
         for await(let row of rows){
@@ -49,6 +49,7 @@ module.exports = class Membres{
             }
         }
 
+        joueurs.sort()
         res.render("partials/layout", {body: "membres",
             admins: admins,
             joueurs: joueurs,
