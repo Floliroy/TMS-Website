@@ -18,14 +18,15 @@ class Membre{
     }
 }
 
-const admins = new Array()
-const joueurs = new Array()
 
 module.exports = class Membres{
 
     static async getPage(req, res){
         console.log(`${req.headers["x-forwarded-for"] || req.connection.remoteAddress} asked for membres`)
 
+        const admins = new Array()
+        const joueurs = new Array()
+        
         const sheet = doc.sheetsById["0"]
         const rows = await sheet.getRows()
         for await(let row of rows){

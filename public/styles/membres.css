@@ -24,3 +24,11 @@ table.membre{
     min-width: 165px;
     height: 95px;
 }
+
+.fa{
+    transition: color 200ms linear;
+}
+.fa:hover{
+    color: rgb(248,126,43);
+    
+}
