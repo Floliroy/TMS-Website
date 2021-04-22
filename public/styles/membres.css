@@ -1,34 +1,32 @@
-img.imgProfil{
-    margin: 0.7em 0.3em 0 0;
-    width: 80px;
-}
-
 div.membres{
     text-align: center;
 }
 
 table.membre{
-    background: linear-gradient(70deg, rgb(77, 77, 77) 50%, rgb(248,126,43));
+    background: linear-gradient(70deg, rgb(77, 77, 77) 50%, var(--primary-color));
     display: inline-block;
     border-radius: 15px;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.7);
-    margin: 5px 0 5px 0;
-    width: 380px;
+    width: 360px;
+    height: 110px;
 }
 
 .membre td{
     text-align: left;
 }
+.membre h2{
+    white-space: nowrap;
+}
 .membre td:nth-child(2){
-    max-width: 205px;
+    max-width: 165px;
     min-width: 165px;
     height: 95px;
 }
 
 .fa{
-    transition: color 200ms linear;
+    color: lightgrey;
+    transition: all .5s;
 }
 .fa:hover{
-    color: rgb(248,126,43);
-    
+    color: var(--primary-color);
 }

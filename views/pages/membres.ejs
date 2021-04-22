@@ -8,10 +8,10 @@
 %>
         <table class="membre">
             <tr>
-                <td>
-                    <img src="<%=membre.image ? membre.image : "./logo.png"%>" class="imgProfil round"/>
+                <td class="p-2">
+                    <img src="<%=membre.image ? membre.image : "./logo.png"%>" width="80px" class="rounded-circle"/>
                 </td>
-                <td>
+                <td class="p-2">
                     <h2><%=membre.pseudo%></h2>
                     <%if(membre.twitter){%>
                         &nbsp;
@@ -30,8 +30,7 @@
                         <a href="<%=membre.twitch%>" target="_blank"><i class="fa">&#xf1e8;</i></a>
                     <%}%>
                 </td>
-                <td>
-                    <%if(membre.roles.length < 4){%><br/><%}%>   
+                <td class="p-2"> 
                     <%for(const role of membre.roles){%>
                         <small><em><%=role%></em></small><br/>
                     <%}%>
@@ -50,10 +49,10 @@
 %>
         <table class="membre">
             <tr>
-                <td>
-                    <img src="<%=membre.image ? membre.image : "./logo.png"%>" class="imgProfil round"/>
+                <td class="p-2">
+                    <img src="<%=membre.image ? membre.image : "./logo.png"%>" width="80px" class="rounded-circle"/>
                 </td>
-                <td>
+                <td class="p-2">
                     <h2><%=membre.pseudo%></h2>
                     <%if(membre.twitter){%>
                         &nbsp;
@@ -72,8 +71,8 @@
                         <a href="<%=membre.twitch%>" target="_blank"><i class="fa">&#xf1e8;</i></a>
                     <%}%>
                 </td>
-                <td>
-                    <%if(membre.roles.length < 4){%><br/><%}%>   
+                <td class="p-2"> 
+                    <%if(membre.pseudo.length > 9){%><br/><%}%>
                     <%for(const role of membre.roles){%>
                         <small><em><%=role%></em></small><br/>
                     <%}%>

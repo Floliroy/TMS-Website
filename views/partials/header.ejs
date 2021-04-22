@@ -1,21 +1,33 @@
 <link rel="stylesheet" type="text/css" href="./styles/header.css" />
 <header>
-    <strong>
-        <a href="/" class="<%=body=="index"?"selected":""%>"><img src="./logo.png" class="logo"/>ACCUEIL</a>
-    </strong>
-    <strong>
-        <a href="/projets" class="<%=body=="projets"?"selected":""%>">PROJETS</a>
-    </strong>
-    <strong>
-        <a href="/stream" class="<%=body=="stream"?"selected":""%>">STREAM</a>
-    </strong>
-    <strong>
-        <a href="/membres" class="<%=body=="membres"?"selected":""%>">MEMBRES</a>
-    </strong>
-    <strong>
-        <a href="/recrutement" class="<%=body=="recrutement"?"selected":""%>">RECRUTEMENT</a>
-    </strong>
-    <strong>
-        <a href="/aboutus" class="<%=body=="aboutus"?"selected":""%>">A PROPOS</a>
-    </strong>
-</header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <a class="navbar-brand" href="/">
+            <img src="./logo.png" alt="Logo TMS" width="50px">
+        </a>
+    
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav">
+                <li class="nav-item p-2">
+                    <a href="/projets" class="nav-link <%=body=="projets"?"active":""%>">PROJETS</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a href="/stream" class="nav-link <%=body=="stream"?"active":""%>">STREAM</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a href="/membres" class="nav-link <%=body=="membres"?"active":""%>">MEMBRES</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a href="/recrutement" class="nav-link <%=body=="recrutement"?"active":""%>">RECRUTEMENT</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a href="/aboutus" class="nav-link <%=body=="aboutus"?"active":""%>">A PROPOS</a>
+                </li>
+            </ul>
+        </div>
+    
+    </nav>
+    </header>

@@ -42,18 +42,6 @@ gsap.set(loader, {
 barba.hooks.enter(function(){
     window.scrollTo(window.scrollX, 0)
 })
-//Recreate twitch embed player
-barba.hooks.after(function(){
-    if($("#twitch-embed").length){
-        const width = document.querySelector("#main").offsetWidth - 46
-        new Twitch.Embed("twitch-embed", {
-            width: "100%",
-            height: (width-340)/(16/9),
-            channel: "tacticalmonkeyesport",
-            parent: ["tms.floliroy.fr"],
-        })
-    }
-})
 //Barba init
 barba.init({
     transitions: [{

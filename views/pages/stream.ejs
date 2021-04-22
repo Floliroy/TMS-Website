@@ -1,16 +1,20 @@
-<h1>Stream Twitch</h1>
-<div id="twitch-embed" class="center"></div>
-<script type="text/javascript">
-    const width = document.querySelector("#main").offsetWidth - 46
-    new Twitch.Embed("twitch-embed", {
-        width: "100%",
-        height: (width-340)/(16/9),
-        channel: "tacticalmonkeyesport",
-        parent: ["tms.floliroy.fr"],
-    })
-</script>
+<h1 class="p-5">Stream Twitch</h1>
+
+<link rel="stylesheet" type="text/css" href="./styles/twitch.css" />
+<div class="twitch">
+    <div class="twitch-video">
+        <iframe frameborder="0" scrolling="no" allowfullscreen="true"height="100%" width="100%"
+            src="https://player.twitch.tv/?channel=nemaidestft&parent=nemacup.fr">
+        </iframe>
+    </div>
+    <div class="twitch-chat">
+        <iframe frameborder="0" scrolling="no" height="100%" width="100%"
+            src="https://www.twitch.tv/embed/nemaidestft/chat?darkpopout&parent=nemacup.fr">
+        </iframe>
+    </div>
+</div>
 
 <br/><br/><br/>
 
-<h1>Planning de la Semaine</h1>
-<img class="planning" src="/planning"/>
+<h1 class="p-5">Planning de la Semaine</h1>
+<img class="planning" src="/planning" width="100%"/>
