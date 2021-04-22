@@ -13,6 +13,7 @@ table.membre{
 
 .membre td{
     text-align: left;
+    height: 110px;
 }
 .membre h2{
     white-space: nowrap;
