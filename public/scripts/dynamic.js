@@ -16,9 +16,18 @@ window.setTimeout(offsetAnchor, 0)
 /**
  * Change header active link
  */
+ const listAboutus = new Array("aboutus", "projets", "recrutement", "coaching")
 $(document).on('click', 'header a', function(event) {
     $(".active").removeClass("active")
     $(event.currentTarget).addClass("active")
+    
+    const decomposition = event.currentTarget.href.split("/")
+    const body = decomposition[decomposition.length-1]
+    if(event.currentTarget.href.includes("?lineup")){
+        $("#navbarDropdownLineup").addClass("active")
+    }else if(listAboutus.includes(body)){
+        $("#navbarDropdownAboutus").addClass("active")
+    }
 })
 
 /**
