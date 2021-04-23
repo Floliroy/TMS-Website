@@ -14,3 +14,15 @@ nav ul li a.nav-link:hover {
     color: #555;
     text-shadow: 0px 0px 15px rgba(200, 200, 200, 0.6);
 }
+
+.dropdown .dropdown-menu-dark{
+    background-color: #343a40;
+}
+.dropdown .dropdown-menu-dark a{
+    color: lightgrey;
+}
+.dropdown .dropdown-menu-dark a:hover{
+    background-color: lightgrey !important;
+    color: #212529;
+    font-weight: bold;
+}

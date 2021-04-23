@@ -9,6 +9,10 @@ doc.loadInfo()
 class Membre{
     constructor(pseudo){
         this.pseudo = pseudo
+        this.tft = false
+        this.valo = false
+        this.rl = false
+        this.lol = false
         this.roles = new Array()
         this.image = null
         this.twitter = null
@@ -18,11 +22,17 @@ class Membre{
     }
 }
 
+const mapTitres = new Map()
+mapTitres.set("staff", "Le Staff")
+mapTitres.set("tft", "TeamFight Tactics")
+mapTitres.set("valo", "Valorant")
+mapTitres.set("rl", "Rocket League")
+mapTitres.set("lol", "League of Legends")
 
 module.exports = class Membres{
 
     static async getPage(req, res){
-        console.log(`${req.headers["x-forwarded-for"] || req.connection.remoteAddress} asked for membres`)
+        console.log(`${req.headers["x-forwarded-for"] || req.connection.remoteAddress} asked for lineup ${req.query.lineup}`)
 
         const admins = new Array()
         const joueurs = new Array()
@@ -31,11 +41,18 @@ module.exports = class Membres{
         const rows = await sheet.getRows()
         for await(let row of rows){
             let membre = new Membre(row.Pseudo)
+
+            membre.tft = row.TFT == "TRUE"
+            membre.valo = row.Valo == "TRUE"
+            membre.rl = row.RL == "TRUE"
+            membre.lol = row.LoL == "TRUE"
+
             for(let i=1 ; i<=4 ; i++){
                 if(row[`Role ${i}`]){
                     membre.roles.push(row[`Role ${i}`])
                 }
             }
+            
             if(row.Image) membre.image = row.Image
             if(row.Twitter) membre.twitter = row.Twitter
             if(row.Facebook) membre.facebook = row.Facebook
@@ -44,15 +61,17 @@ module.exports = class Membres{
             
             if(row.Staff == "TRUE"){
                 admins.push(membre)
-            }else{
+            }else {
                 joueurs.push(membre)
             }
         }
 
         joueurs.sort((a,b) => (a.pseudo > b.pseudo) ? 1 : ((b.pseudo > a.pseudo) ? -1 : 0))
-        res.render("partials/layout", {body: "membres",
-            admins: admins,
-            joueurs: joueurs,
+
+        res.render("partials/layout", {body: "lineup",
+            lineup: req.query.lineup,
+            titre: mapTitres.get(req.query.lineup),
+            players: req.query.lineup == "staff" ? admins : joueurs,
             fs: require('fs'),
             __dirname: __dirname
         })

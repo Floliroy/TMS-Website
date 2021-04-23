@@ -67,7 +67,7 @@ img.clickable:hover {
     transform: scale(1.2);
 }
 
-a:not(.nav-link){
+a:not(.nav-link, .dropdown-item){
     color: var(--primary-color) !important;
 }
 a:hover{
