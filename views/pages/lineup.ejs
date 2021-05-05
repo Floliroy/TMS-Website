@@ -7,28 +7,28 @@
     for(const membre of players){
         if(lineup == "staff" || membre[`${lineup}`] == true){
 %>
-        <table class="membre">
+        <table class="membre" aria-label="Membre <%=membre.pseudo%>">
             <tr>
-                <td class="p-2">
-                    <img src="<%=membre.image ? membre.image : "./logo.png"%>" width="80px" class="rounded-circle"/>
-                </td>
+                <th class="p-2" id="member_<%=membre.pseudo%>">
+                    <img src="<%=membre.image ? membre.image : "./logo.png"%>" width="80px" class="rounded-circle" alt="Logo <%=membre.pseudo%>"/>
+                </th>
                 <td class="p-2">
                     <h2><%=membre.pseudo%></h2>
                     <%if(membre.twitter){%>
                         &nbsp;
-                        <a href="<%=membre.twitter%>" target="_blank"><i class="fa">&#xf099;</i></a>
+                        <a href="<%=membre.twitter%>" target="_blank"><em class="fa">&#xf099;</i></a>
                     <%}%>
                     <%if(membre.facebook){%>
                         &nbsp;
-                        <a href="<%=membre.facebook%>" target="_blank"><i class="fa">&#xf082;</i></a>
+                        <a href="<%=membre.facebook%>" target="_blank"><em class="fa">&#xf082;</i></a>
                     <%}%>
                     <%if(membre.instagram){%>
                         &nbsp;
-                        <a href="<%=membre.instagram%>" target="_blank"><i class="fa">&#xf16d;</i></a>
+                        <a href="<%=membre.instagram%>" target="_blank"><em class="fa">&#xf16d;</i></a>
                     <%}%>
                     <%if(membre.twitch){%>
                         &nbsp;
-                        <a href="<%=membre.twitch%>" target="_blank"><i class="fa">&#xf1e8;</i></a>
+                        <a href="<%=membre.twitch%>" target="_blank"><em class="fa">&#xf1e8;</i></a>
                     <%}%>
                 </td>
                 <td class="p-2"> 

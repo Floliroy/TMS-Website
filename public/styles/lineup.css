@@ -27,6 +27,7 @@ table.membre{
 .fa{
     color: lightgrey;
     transition: all .5s;
+    margin-right: 3px;
 }
 .fa:hover{
     color: var(--primary-color);
