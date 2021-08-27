@@ -14,6 +14,7 @@ module.exports = class Pages{
         res.render("partials/layout", {body: "unparse",
             titre: titre,
             content: docResponse.data.body.content,
+            images: docResponse.data.inlineObjects
         })
     }
 

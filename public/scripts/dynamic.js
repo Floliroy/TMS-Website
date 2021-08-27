@@ -16,7 +16,7 @@ window.setTimeout(offsetAnchor, 0)
 /**
  * Change header active link
  */
- const pageName = new Map()
+const pageName = new Map()
     .set("index", "Accueil")
     .set("actualites", "Actualités")
     .set("lineup", "Line-up")

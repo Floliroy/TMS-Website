@@ -16,21 +16,33 @@ if(elem.paragraph.paragraphStyle.namedStyleType == "HEADING_1"){
     <div class="<%=elem.paragraph.paragraphStyle.alignment == "CENTER" ? "text-center" : ""%>">
 <%
         for(const texte of elem.paragraph.elements){
-            if(texte.textRun.textStyle.bold){
+            if(texte.textRun){
+                if(texte.textRun.textStyle.bold){
 %>
-                <strong><%=texte.textRun.content%></strong>
+                    <strong><%=texte.textRun.content%></strong>
 <%
-            }else if(texte.textRun.textStyle.italic){
+                }else if(texte.textRun.textStyle.italic){
 %>
-                <em><%=texte.textRun.content%></em>
+                    <em><%=texte.textRun.content%></em>
 <%
-            }else if(texte.textRun.textStyle.link){
+                }else if(texte.textRun.textStyle.link){
 %> 
-                <a href="<%=texte.textRun.textStyle.link.url%>" target="_blank"><%=texte.textRun.content%></a>
+                    <a href="<%=texte.textRun.textStyle.link.url%>" target="_blank"><%=texte.textRun.content%></a>
 <%
-            }else{
+                }else if(texte.textRun.content == "\n"){
 %>
-                <%=texte.textRun.content%>
+                    <br>
+<%
+                }else{
+%>
+                    <%=texte.textRun.content%>
+<%
+                }
+            }else if(texte.inlineObjectElement){
+                const url = images[texte.inlineObjectElement.inlineObjectId].inlineObjectProperties.embeddedObject.imageProperties.sourceUri
+                const width = images[texte.inlineObjectElement.inlineObjectId].inlineObjectProperties.embeddedObject.size.width.magnitude
+                %>
+                <img src="<%=url%>" alt="img<%=texte.inlineObjectElement.inlineObjectId%>" width="<%=width%>pt" class="img-fluid rounded p-2"/>
 <%
             }
         }
