@@ -1,0 +1,25 @@
+<% 
+for(const elem of content){
+    if(elem.paragraph){
+%>
+    <%-include("unparseParagraph", {elem: elem})%>
+<%
+    }else if(elem.table){
+        for(const row of elem.table.tableRows){
+%>
+            <div class="row">
+<%
+                for(const col of row.tableCells){
+%>
+                    <div class="col">
+                        <%-include("unparseParagraph", {elem: col.content[0]})%>
+                    </div>
+<%
+                }
+%>   
+            </div>
+<%
+        }
+    }
+}
+%> 

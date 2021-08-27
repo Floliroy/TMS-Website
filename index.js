@@ -12,6 +12,7 @@ const path = require('path')
  * My own libraries
  */
 const Membres = require('./modules/membres')
+const Pages = require('./modules/pages')
 
 
 /**
@@ -36,7 +37,8 @@ app.get("/", function(req, res){
     getPage("index", req, res)
 })
 app.get("/actualites", function(req, res){
-    getPage("actualites", req, res)
+    Pages.getPage("1khD6yWfKJrdSU0B--C_W0vh02ZPefF5a1ZhB_BJ3nzk", "Actualités", req, res)
+    //getPage("actualites", req, res)
 })
 app.get("/lineup", function(req, res){
     Membres.getPage(req, res)
