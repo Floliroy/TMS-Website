@@ -38,7 +38,7 @@ $(document).on('click', 'header a', function(event) {
 /**
  * Hide navbar on click
  */
-$(".navbar-collapse").on('click', 'a:not([data-toggle])', function () {
+$(".navbar-collapse").on('click', 'a:not([data-toggle])', function (event) {
     //Close menu
     $(".navbar-collapse").collapse("hide")
 
