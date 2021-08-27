@@ -3,11 +3,11 @@
 <%
 const pageName = new Map()
     .set("index", "Accueil")
-    .set("projets", "Projets")
-    .set("stream", "Stream")
-    .set("membres", "Membres")
-    .set("recrutement", "Recrutement")
-    .set("aboutus", "A Propos")
+    .set("actualites", "Actualités")
+    .set("lineup", "Line-up")
+    .set("stream", "Web TV")
+    .set("aboutus", "A propos")
+    .set("recrutement", "Nous rejoindre")
     .set("error", "Erreur 404")
 %>
 <head>
@@ -16,10 +16,10 @@ const pageName = new Map()
     <title>TMS - <%=pageName.get(body)%></title>
 
     <link rel="icon" type="image/png" href="./logo.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>    
+    <link rel="stylesheet" type="text/css" href="./styles/segoeui.css" />  
     <link rel="stylesheet" type="text/css" href="./styles/index.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu&&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./index.css" />
 
     <!-- ALL THE SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

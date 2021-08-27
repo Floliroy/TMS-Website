@@ -47,7 +47,7 @@ module.exports = class Membres{
             membre.rl = row.RL == "TRUE"
             membre.lol = row.LoL == "TRUE"
 
-            for(let i=1 ; i<=4 ; i++){
+            for(let i=1 ; i<=3 ; i++){
                 if(row[`Role ${i}`]){
                     membre.roles.push(row[`Role ${i}`])
                 }
@@ -59,10 +59,9 @@ module.exports = class Membres{
             if(row.Twitch) membre.twitch = row.Twitch
             if(row.Instagram) membre.instagram = row.Instagram
             
+            joueurs.push(membre)
             if(row.Staff == "TRUE"){
                 admins.push(membre)
-            }else {
-                joueurs.push(membre)
             }
         }
 

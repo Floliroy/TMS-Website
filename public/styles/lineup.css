@@ -2,33 +2,23 @@ div.membres{
     text-align: center;
 }
 
-table.membre{
+div.membre{
     background: linear-gradient(70deg, rgb(77, 77, 77) 50%, var(--primary-color));
-    display: inline-block;
     border-radius: 15px;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.7);
+
+    height: 100px;
     width: 360px;
-    height: 110px;
+    margin: 3px;
+
+    display: inline-block;
 }
 
-.membre td{
-    text-align: left;
-    height: 110px;
-}
-.membre h2{
-    white-space: nowrap;
-}
-.membre td:nth-child(2){
-    max-width: 165px;
-    min-width: 165px;
-    height: 95px;
-}
-
-.fa{
-    color: lightgrey;
+.fam{
+    font-size: medium;
     transition: all .5s;
     margin-right: 3px;
 }
-.fa:hover{
+.fam:hover{
     color: var(--primary-color);
 }

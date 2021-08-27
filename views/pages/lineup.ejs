@@ -1,44 +1,40 @@
 <link rel="stylesheet" type="text/css" href="./styles/lineup.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <h1 class="p-5"><%=titre%></h1>
-<div class="membres pb-2">
+
+<div class="membres">
 <%  
     for(const membre of players){
-        if(lineup == "staff" || membre[`${lineup}`] == true){
+        if(lineup == "staff" || membre[`${lineup}`] == true){   
 %>
-        <table class="membre" aria-label="Membre <%=membre.pseudo%>">
-            <tr>
-                <th class="p-2" id="member_<%=membre.pseudo%>">
-                    <img src="<%=membre.image ? membre.image : "./logo.png"%>" width="80px" class="rounded-circle" alt="Logo <%=membre.pseudo%>"/>
-                </th>
-                <td class="p-2">
-                    <h2><%=membre.pseudo%></h2>
-                    <%if(membre.twitter){%>
-                        &nbsp;
-                        <a href="<%=membre.twitter%>" target="_blank"><em class="fa">&#xf099;</i></a>
-                    <%}%>
-                    <%if(membre.facebook){%>
-                        &nbsp;
-                        <a href="<%=membre.facebook%>" target="_blank"><em class="fa">&#xf082;</i></a>
-                    <%}%>
-                    <%if(membre.instagram){%>
-                        &nbsp;
-                        <a href="<%=membre.instagram%>" target="_blank"><em class="fa">&#xf16d;</i></a>
-                    <%}%>
-                    <%if(membre.twitch){%>
-                        &nbsp;
-                        <a href="<%=membre.twitch%>" target="_blank"><em class="fa">&#xf1e8;</i></a>
-                    <%}%>
-                </td>
-                <td class="p-2"> 
-                    <%if(membre.pseudo.length > 9){%><br/><%}%>
-                    <%for(const role of membre.roles){%>
-                        <small><em><%=role%></em></small><br/>
-                    <%}%>
-                </td>
-            </tr>
-        </table>
+            <div class="membre">
+                <div class="row">
+                    <div class="col-3 pt-2 pb-2 pl-4">
+                        <img src="<%=membre.image ? membre.image : "./logo.png"%>" height="80px" class="rounded-circle" alt="Logo <%=membre.pseudo%>"/>
+                    </div>
+                    
+                    <div class="col-5 pt-2 pb-1 pl-4 text-left">
+                        <h2 class="text-nowrap"><%=membre.pseudo%></h2>
+                        <%if(membre.twitter){%>
+                            <a href="<%=membre.twitter%>" target="_blank"><em class="fa fa-twitter fam"></em></a>
+                        <%}%>
+                        <%if(membre.facebook){%>
+                            <a href="<%=membre.facebook%>" target="_blank"><em class="fa fa-facebook-square fam"></em></a>
+                        <%}%>
+                        <%if(membre.instagram){%>
+                            <a href="<%=membre.instagram%>" target="_blank"><em class="fa fa-instagram fam"></em></a>
+                        <%}%>
+                        <%if(membre.twitch){%>
+                            <a href="<%=membre.twitch%>" target="_blank"><em class="fa fa-twitch fam"></em></a>
+                        <%}%>
+                    </div>
+
+                    <div class="col-4 pt-1 pb-1 pr-4 text-right">
+                        <%for(const role of membre.roles){%>
+                            <small><em><%=role%></em></small><br/>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
 <%
         }
     }

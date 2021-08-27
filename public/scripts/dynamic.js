@@ -16,18 +16,30 @@ window.setTimeout(offsetAnchor, 0)
 /**
  * Change header active link
  */
- const listAboutus = new Array("aboutus", "projets", "recrutement", "coaching")
+ const pageName = new Map()
+    .set("index", "Accueil")
+    .set("actualites", "Actualités")
+    .set("lineup", "Line-up")
+    .set("stream", "Web TV")
+    .set("aboutus", "A propos")
+    .set("recrutement", "Nous rejoindre")
+    .set("error", "Erreur 404")
+
 $(document).on('click', 'header a', function(event) {
+    //Close menu
+    $(".show").removeClass("show")
+    //Set active menu
     $(".active").removeClass("active")
     $(event.currentTarget).addClass("active")
-    
-    const decomposition = event.currentTarget.href.split("/")
-    const body = decomposition[decomposition.length-1]
+    //Set active sub menu
     if(event.currentTarget.href.includes("?lineup")){
         $("#navbarDropdownLineup").addClass("active")
-    }else if(listAboutus.includes(body)){
-        $("#navbarDropdownAboutus").addClass("active")
     }
+
+    //Change page title    
+    const decomposition = event.currentTarget.href.split("/")
+    const body = decomposition[decomposition.length-1]
+    document.title = `TMS - ${pageName.get(body)}`
 })
 
 /**

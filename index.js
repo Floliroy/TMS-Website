@@ -41,25 +41,15 @@ app.get("/actualites", function(req, res){
 app.get("/lineup", function(req, res){
     Membres.getPage(req, res)
 })
-app.get("/resultats", function(req, res){
-    getPage("resultats", req, res)
+app.get("/aboutus", function(req, res){
+    getPage("aboutus", req, res)
 })
 app.get("/stream", function(req, res){
     getPage("stream", req, res)
 })
-app.get("/aboutus", function(req, res){
-    getPage("aboutus", req, res)
-})
-app.get("/projets", function(req, res){
-    getPage("projets", req, res)
-})
 app.get("/recrutement", function(req, res){
     getPage("recrutement", req, res)
 })
-app.get("/coaching", function(req, res){
-    getPage("coaching", req, res)
-})
-
 
 
 app.get("/planning", function(req, res){

@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="./styles/header.css" />
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false">
@@ -6,17 +5,17 @@
         </button>
     
         <a class="navbar-brand" href="/">
-            <img src="./logo.png" alt="Logo TMS" width="50px">
+            <img src="./logo.png" width="65px" alt="Logo TMS">
         </a>
     
         <div class="collapse navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav">
                 <li class="nav-item p-2">
-                    <a href="/actualites" class="nav-link <%=body=="actualites"?"active":""%>">ACTUALITES</a>
+                    <a href="/actualites" class="nav-link <%=body=="actualites"?"active":""%>">Actualités</a>
                 </li>
                 <li class="nav-item p-2 dropdown">
                     <a class="nav-link dropdown-toggle <%=body=="lineup"?"active":""%>" href="#" id="navbarDropdownLineup" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Line Up
+                        Line-up
                     </a>
                     <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownLineup">
                         <a class="dropdown-item <%=body=="lineup" && lineup=="staff" ? "active" : ""%>" href="/lineup?lineup=staff">Staff</a>
@@ -27,22 +26,17 @@
                     </div>
                 </li>
                 <li class="nav-item p-2">
-                    <a href="/resultats" class="nav-link <%=body=="resultats"?"active":""%>">RESULTATS</a>
+                    <a href="/aboutus" class="nav-link <%=body=="aboutus"?"active":""%>">À propos</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a href="/stream" class="nav-link <%=body=="stream"?"active":""%>">STREAM</a>
+                    <a href="/stream" class="nav-link <%=body=="stream"?"active":""%>">Web TV</a>
                 </li>
-                <%const listAboutus = new Array("aboutus", "projets", "recrutement", "coaching")%>
-                <li class="nav-item p-2 dropdown">
-                    <a class="nav-link dropdown-toggle <%=listAboutus.includes(body)?"active":""%>" href="#" id="navbarDropdownAboutus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        A PROPOS
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownAboutus">
-                        <a class="dropdown-item <%=body=="aboutus"?"active":""%>" href="/aboutus">A Propos</a>
-                        <a class="dropdown-item <%=body=="projets"?"active":""%>" href="/projets">Projets</a>
-                        <a class="dropdown-item <%=body=="recrutement"?"active":""%>" href="/recrutement">Recrutement</a>
-                        <a class="dropdown-item <%=body=="coaching"?"active":""%>" href="/coaching">Coaching</a>
-                    </div>
+                <li class="nav-item p-2">
+                    <button type="button" class="button">
+                        <a href="/recrutement" class="nav-link <%=body=="recrutement"?"active":""%>">
+                            Nous rejoindre
+                        </a>
+                    </button>
                 </li>
             </ul>
         </div>
