@@ -26,8 +26,6 @@ window.setTimeout(offsetAnchor, 0)
     .set("error", "Erreur 404")
 
 $(document).on('click', 'header a', function(event) {
-    //Close menu
-    $(".show").removeClass("show")
     //Set active menu
     $(".active").removeClass("active")
     $(event.currentTarget).addClass("active")
@@ -35,16 +33,20 @@ $(document).on('click', 'header a', function(event) {
     if(event.currentTarget.href.includes("?lineup")){
         $("#navbarDropdownLineup").addClass("active")
     }
-
-    //Change page title    
-    const decomposition = event.currentTarget.href.split("/")
-    const body = decomposition[decomposition.length-1]
-    document.title = `TMS - ${pageName.get(body)}`
 })
 
 /**
  * Hide navbar on click
  */
 $(".navbar-collapse").on('click', 'a:not([data-toggle])', function () {
+    //Close menu
     $(".navbar-collapse").collapse("hide")
+
+    //Close submenu
+    $(".show").removeClass("show")
+
+    //Change page title    
+    const decomposition = event.currentTarget.href.split("/")
+    const body = decomposition[decomposition.length-1]
+    document.title = `TMS - ${pageName.get(body)}`
 })
