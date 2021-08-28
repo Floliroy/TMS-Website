@@ -14,7 +14,6 @@ const path = require('path')
 const Membres = require('./modules/membres')
 const Pages = require('./modules/pages')
 
-
 /**
  * Setup the express lib
  */
@@ -23,42 +22,47 @@ app.use(express.urlencoded({extended: true}))
 app.set("view engine", "ejs")
 
 /**
+ * Load custom pages and members from google
+ */
+Pages.loadPages()
+Membres.loadMembres()
+
+/**
  * Pages
  */
-function getPage(page, req, res){
-    if(page != "error"){
-        console.log(`${req.headers["x-forwarded-for"] || req.connection.remoteAddress} asked for ${page}`)
-    }
-
-    res.render("partials/layout", {body: page})
-}
-
 app.get("/", function(req, res){
-    getPage("index", req, res)
+    res.render("partials/layout", {body: "index"})
 })
 app.get("/actualites", function(req, res){
-    Pages.getPage("1khD6yWfKJrdSU0B--C_W0vh02ZPefF5a1ZhB_BJ3nzk", "Actualités", req, res)
-    //getPage("actualites", req, res)
+    Pages.getPage("Actualités", req, res)
 })
 app.get("/lineup", function(req, res){
     Membres.getPage(req, res)
 })
 app.get("/aboutus", function(req, res){
-    getPage("aboutus", req, res)
+    res.render("partials/layout", {body: "aboutus"})
 })
 app.get("/stream", function(req, res){
-    getPage("stream", req, res)
+    res.render("partials/layout", {body: "stream"})
 })
 app.get("/recrutement", function(req, res){
-    getPage("recrutement", req, res)
+    res.render("partials/layout", {body: "recrutement"})
 })
 
-
+/**
+ * Lien utiles
+ */
+app.get("/update", function(req, res){ //TODO: Changer lien (clé ? post?)
+    console.log("Mise a jour des données...")
+    Pages.loadPages()
+    Membres.loadMembres()
+    res.end()
+})
 app.get("/planning", function(req, res){
     res.sendFile(path.resolve("../../Shared/planning.png"))
 })
 app.get("/error", function(req, res){
-    getPage("error", req, res)
+    res.render("partials/layout", {body: "error"})
 })
 
 /**

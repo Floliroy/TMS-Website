@@ -71,6 +71,9 @@ nav ul li a.nav-link:hover {
 .dropdown .dropdown-menu-dark{
     background-color: #080808;
 }
+.dropdown .dropdown-menu-dark :not(.show){
+    width: 190px;
+}
 .dropdown .dropdown-menu-dark a{
     color: var(--white-color);
 }

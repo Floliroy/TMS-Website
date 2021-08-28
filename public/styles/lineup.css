@@ -14,6 +14,12 @@ div.membre{
     display: inline-block;
 }
 
+.cm{
+    display: flow-root;
+    margin-top: -5px;
+    margin-bottom: -22px;
+}
+
 .fam{
     font-size: medium;
     transition: all .5s;

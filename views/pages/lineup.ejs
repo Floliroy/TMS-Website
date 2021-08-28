@@ -29,9 +29,19 @@
                     </div>
 
                     <div class="col-4 pt-1 pb-1 pr-4 text-right">
-                        <%for(const role of membre.roles){%>
-                            <small><em><%=role%></em></small><br/>
-                        <%}%>
+<%
+                        for(const role of membre.roles){
+                            if(role != "Community Manager"){
+%>
+                            <small><em><%=role%></em></small><br/>       
+<%
+                            }else{
+%>
+                            <small><em>Community</em> <em class="cm">Manager</em></small><br/>       
+<%                               
+                            }
+                        }
+%>
                     </div>
                 </div>
             </div>

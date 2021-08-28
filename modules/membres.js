@@ -4,7 +4,6 @@ doc.useServiceAccountAuth({
     client_email: process.env.GOOGLE_EMAIL,
     private_key: process.env.GOOGLE_TOKEN.replace(/\\n/g, '\n')
 })
-doc.loadInfo()
 
 class Membre{
     constructor(pseudo){
@@ -29,14 +28,16 @@ mapTitres.set("valo", "Valorant")
 mapTitres.set("rl", "Rocket League")
 mapTitres.set("lol", "League of Legends")
 
+let admins = new Array()
+let joueurs = new Array()
+
 module.exports = class Membres{
 
-    static async getPage(req, res){
-        console.log(`${req.headers["x-forwarded-for"] || req.connection.remoteAddress} asked for lineup ${req.query.lineup}`)
+    static async loadMembres(){
+        admins = new Array()
+        joueurs = new Array()
 
-        const admins = new Array()
-        const joueurs = new Array()
-
+        await doc.loadInfo()
         const sheet = doc.sheetsById["0"]
         const rows = await sheet.getRows()
         for await(let row of rows){
@@ -66,7 +67,9 @@ module.exports = class Membres{
         }
 
         joueurs.sort((a,b) => (a.pseudo > b.pseudo) ? 1 : ((b.pseudo > a.pseudo) ? -1 : 0))
+    }
 
+    static async getPage(req, res){
         res.render("partials/layout", {body: "lineup",
             lineup: req.query.lineup,
             titre: mapTitres.get(req.query.lineup),
