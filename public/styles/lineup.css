@@ -3,7 +3,7 @@ div.membres{
 }
 
 div.membre{
-    background: linear-gradient(70deg, rgb(77, 77, 77) 50%, var(--primary-color));
+    background: linear-gradient(70deg, rgb(33, 33, 33) 50%, var(--primary-color));
     border-radius: 15px;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.7);
 
