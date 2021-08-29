@@ -37,7 +37,7 @@ const pageName = new Map()
     .set("aboutus", "A propos")
     .set("recrutement", "Nous rejoindre")
     .set("error", "Erreur 404")
-$(".navbar-collapse").on('click', 'a:not([data-toggle])', function (event) {
+$(".navbar").on('click', 'a:not([data-toggle])', function (event) {
     //Close menu
     $(".navbar-collapse").collapse("hide")
 
