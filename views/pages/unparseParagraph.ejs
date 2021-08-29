@@ -1,53 +1,75 @@
-<%
-if(elem.paragraph.paragraphStyle.namedStyleType == "HEADING_1"){
-%>
-    <h1 class="p-5"><%=elem.paragraph.elements[0].textRun.content%></h1>
-<%
-}else if(elem.paragraph.paragraphStyle.namedStyleType == "HEADING_2"){
-%>
-    <h2><%=elem.paragraph.elements[0].textRun.content%></h2>
-<%
-}else if(elem.paragraph.paragraphStyle.namedStyleType == "HEADING_3"){
-%>
-    <h3><%=elem.paragraph.elements[0].textRun.content%></h3>
-<%
-}else {
-%>
-    <div class="<%=elem.paragraph.paragraphStyle.alignment == "CENTER" ? "text-center" : ""%>">
-<%
-        for(const texte of elem.paragraph.elements){
-            if(texte.textRun){
-                if(texte.textRun.textStyle.bold){
-%>
-                    <strong><%=texte.textRun.content%></strong>
-<%
-                }else if(texte.textRun.textStyle.italic){
-%>
-                    <em><%=texte.textRun.content%></em>
-<%
-                }else if(texte.textRun.textStyle.link){
-%> 
-                    <a href="<%=texte.textRun.textStyle.link.url%>" target="_blank"><%=texte.textRun.content%></a>
-<%
-                }else if(texte.textRun.content == "\n"){
-%>
-                    <br>
-<%
-                }else{
-%>
-                    <%=texte.textRun.content%>
-<%
-                }
-            }else if(texte.inlineObjectElement){
-                const url = images[texte.inlineObjectElement.inlineObjectId].inlineObjectProperties.embeddedObject.imageProperties.sourceUri
-                const width = images[texte.inlineObjectElement.inlineObjectId].inlineObjectProperties.embeddedObject.size.width.magnitude
-                %>
-                <img src="<%=url%>" alt="img<%=texte.inlineObjectElement.inlineObjectId%>" width="<%=width%>pt" class="img-fluid rounded p-2"/>
-<%
-            }
-        }
-%>
-    </div>
+<%if(closeList){%>
+    </<%=listType%>>
 <%
 }
-%> 
+if(elem.paragraph.paragraphStyle.namedStyleType == "HEADING_1"){
+%>
+
+    <h1 class="p-5"><%=elem.paragraph.elements[0].textRun.content%></h1>
+
+<%}else if(elem.paragraph.paragraphStyle.namedStyleType == "HEADING_2"){%>
+
+    <h2><%=elem.paragraph.elements[0].textRun.content%></h2>
+
+<%}else if(elem.paragraph.paragraphStyle.namedStyleType == "HEADING_3"){%>
+
+    <h3><%=elem.paragraph.elements[0].textRun.content%></h3>
+
+<%
+}else{
+    if(elem.paragraph.bullet){
+        if(openList && lists[elem.paragraph.bullet.listId].listProperties.nestingLevels[0].glyphType == "DECIMAL"){
+%>
+            <ol>
+<%
+        }else if(openList){
+%>
+            <ul>
+<%
+        }
+%>
+        <li>
+<%
+    }else{
+%>
+        <div class="<%=elem.paragraph.paragraphStyle.alignment == "CENTER" ? "text-center" : ""%>">
+<%
+    }
+    for(const texte of elem.paragraph.elements){
+        if(texte.textRun){
+            if(texte.textRun.textStyle.bold){
+%>
+                <strong><%=texte.textRun.content%></strong>
+
+            <%}else if(texte.textRun.textStyle.italic){%>
+
+                <em><%=texte.textRun.content%></em>
+
+            <%}else if(texte.textRun.textStyle.link){%> 
+
+                <a href="<%=texte.textRun.textStyle.link.url%>" target="_blank"><%=texte.textRun.content%></a>
+            
+            <%}else if(texte.textRun.content == "\n"){%>
+
+                <br>
+
+            <%}else{%>
+
+                <%=texte.textRun.content%>
+<%
+            }
+        }else if(texte.inlineObjectElement){
+            const url = images[texte.inlineObjectElement.inlineObjectId].inlineObjectProperties.embeddedObject.imageProperties.sourceUri
+            const width = images[texte.inlineObjectElement.inlineObjectId].inlineObjectProperties.embeddedObject.size.width.magnitude
+%>
+            <img src="<%=url%>" alt="img<%=texte.inlineObjectElement.inlineObjectId%>" width="<%=width%>pt" class="img-fluid rounded p-2"/>
+<%
+        }
+    }
+    if(elem.paragraph.bullet){
+%>
+        </li>
+    <%}else{%>
+        </div>
+    <%}%>
+<%}%> 

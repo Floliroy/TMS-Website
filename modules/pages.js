@@ -21,13 +21,15 @@ module.exports = class Pages{
         }
     }
 
+
     static async getPage(titre, req, res){
         const data = pages.get(titre)
 
         res.render("partials/layout", {body: "unparse",
             titre: titre,
             content: data.body.content,
-            images: data.inlineObjects
+            images: data.inlineObjects,
+            lists: data.lists
         })
     }
 

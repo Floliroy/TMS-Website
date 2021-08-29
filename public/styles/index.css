@@ -66,14 +66,16 @@ nav ul li a.nav-link, nav ul li a.nav-link:after,nav ul li a.nav-link:before {
     margin: 0 5px 0 5px;
 }
 nav ul li a.nav-link:hover {
-    text-shadow: 0px 0px 15px rgba(200, 200, 200, 0.6);
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
 }
 
 .dropdown .dropdown-menu-dark{
     background-color: #080808;
 }
-.dropdown .dropdown-menu-dark :not(.show){
-    width: 190px;
+@media screen and (min-width: 992px) {
+    .dropdown .dropdown-menu-dark{
+        width: 190px;
+    }
 }
 .dropdown .dropdown-menu-dark a{
     color: var(--white-color);
@@ -139,6 +141,10 @@ footer{
 }
 .div-footer a > .fa{
     margin: -5px 5px 5px 5px;
+    transition: all .5s;
+}
+.div-footer a > .fa:hover{
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
 }
 
 .container{

@@ -16,15 +16,6 @@ window.setTimeout(offsetAnchor, 0)
 /**
  * Change header active link
  */
-const pageName = new Map()
-    .set("index", "Accueil")
-    .set("actualites", "Actualités")
-    .set("lineup", "Line-up")
-    .set("stream", "Web TV")
-    .set("aboutus", "A propos")
-    .set("recrutement", "Nous rejoindre")
-    .set("error", "Erreur 404")
-
 $(document).on('click', 'header a', function(event) {
     //Set active menu
     $(".active").removeClass("active")
@@ -38,6 +29,14 @@ $(document).on('click', 'header a', function(event) {
 /**
  * Hide navbar on click
  */
+const pageName = new Map()
+    .set("index", "Accueil")
+    .set("actualites", "Actualités")
+    .set("lineup", "Line-up")
+    .set("stream", "Web TV")
+    .set("aboutus", "A propos")
+    .set("recrutement", "Nous rejoindre")
+    .set("error", "Erreur 404")
 $(".navbar-collapse").on('click', 'a:not([data-toggle])', function (event) {
     //Close menu
     $(".navbar-collapse").collapse("hide")
@@ -48,5 +47,7 @@ $(".navbar-collapse").on('click', 'a:not([data-toggle])', function (event) {
     //Change page title    
     const decomposition = event.currentTarget.href.split("/")
     const body = decomposition[decomposition.length-1]
-    document.title = `TMS - ${pageName.get(body)}`
+    if(pageName.get(body)){
+        document.title = `TMS - ${pageName.get(body)}`
+    }
 })

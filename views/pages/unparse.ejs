@@ -1,22 +1,42 @@
 <% 
+let openList = false
+let closeList = false
+let listType
+let listId
 for(const elem of content){
     if(elem.paragraph){
+        if(elem.paragraph.bullet){
+            if(listId != elem.paragraph.bullet.listId){
+                if(listId){
+                    closeList = true
+                }
+                openList = true
+                listId = elem.paragraph.bullet.listId
+            }
+        }else if(listId){
+            closeList = true
+        }
 %>
-    <%-include("unparseParagraph", {elem: elem})%>
-<%
+    <%-include("unparseParagraph", {elem: elem, openList: openList, closeList: closeList, listType: listType})%>
+<%  
+        closeList = false
+        if(openList){
+            if(lists[elem.paragraph.bullet.listId].listProperties.nestingLevels[0].glyphType == "DECIMAL"){
+                listType = "ol"
+            }else{
+                listType = "ul"
+            }
+            openList = false
+        }
     }else if(elem.table){
         for(const row of elem.table.tableRows){
 %>
             <div class="row">
-<%
-                for(const col of row.tableCells){
-%>
+            <%for(const col of row.tableCells){%>
                     <div class="col">
                         <%-include("unparseParagraph", {elem: col.content[0]})%>
                     </div>
-<%
-                }
-%>   
+                <%}%>   
             </div>
 <%
         }
