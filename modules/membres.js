@@ -8,16 +8,7 @@ doc.useServiceAccountAuth({
 class Membre{
     constructor(pseudo){
         this.pseudo = pseudo
-        this.tft = false
-        this.valo = false
-        this.rl = false
-        this.lol = false
         this.roles = new Array()
-        this.image = null
-        this.twitter = null
-        this.facebook = null
-        this.instagram = null
-        this.twitch = null
     }
 }
 
@@ -46,8 +37,12 @@ module.exports = class Membres{
             membre.tft = row.TFT == "TRUE"
             membre.valo = row.Valo == "TRUE"
             membre.rl = row.RL == "TRUE"
-            membre.lol = row.LoL == "TRUE"
+            membre.lol = row["LoL 1"] == "TRUE" || row["LoL 2"] == "TRUE"
+            if(membre.lol){
+                membre.nbEquipe = row["LoL 1"] == "TRUE" ? 1 : 2
+            }
 
+            membre.roleEquipe = row["Role Equipe"]
             for(let i=1 ; i<=3 ; i++){
                 if(row[`Role ${i}`]){
                     membre.roles.push(row[`Role ${i}`])
@@ -70,10 +65,24 @@ module.exports = class Membres{
     }
 
     static async getPage(req, res){
+        const roles = ["Toplane", "Jungle", "Midlane", "ADCarry", "Support"]
+        let players = new Array()
+        if(req.query.lineup == "lol"){
+            for(const role of roles){
+                for(const joueur of joueurs){
+                    if(joueur.roleEquipe == role){
+                        players.push(joueur)
+                    }
+                }
+            }
+        }else{
+            players = req.query.lineup == "staff" ? admins : joueurs
+        }
+
         res.render("partials/layout", {body: "lineup",
             lineup: req.query.lineup,
             titre: mapTitres.get(req.query.lineup),
-            players: req.query.lineup == "staff" ? admins : joueurs,
+            players: players,
             fs: require('fs'),
             __dirname: __dirname
         })
