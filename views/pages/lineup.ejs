@@ -11,9 +11,12 @@
     }
 
     for(let i = 1 ; i <= cpt; i++){
+        
+        if(lineup == "lol"){
 %>
-        <h1 class="p-5"><%=titre%><br/>Équipe <%=i%></h1>
+            <h1 class="p-5"><%=titre%><br/>Équipe <%=i%></h1>
 <%
+        }        
         for(const membre of players){
             if(lineup == "staff" || ((lineup == "lol" && membre.nbEquipe == i) || (lineup != "lol" && membre[`${lineup}`] == true))){   
 %>
