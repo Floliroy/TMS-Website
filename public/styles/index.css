@@ -8,14 +8,12 @@ html{
     height: 100%;
     margin: 0;
 }
-
 @font-face {
-    font-family: Ridgeline201;
-    src:url("../fonts/Ridgeline201-Regular.woff2") format("woff2"),
-        url("../fonts/Ridgeline201-Regular.woff") format("woff"),
-        url("../fonts/Ridgeline201-Regular.ttf") format("truetype");
+    font-family: 'ChineseRocksRg-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('ChineseRocksRg-Regular'), url('../fonts/chinese rocks rg.woff') format('woff');
 }
-
 
 body{
     background: url(/images/wallpaper.png) no-repeat center center fixed;
@@ -99,10 +97,10 @@ nav ul li a.nav-link:hover {
 
 /** Main */
 h1{
-    font-family: 'Ridgeline201';
+    font-family: 'ChineseRocksRg-Regular';
     text-align: center;
     text-shadow: 2px 2px 3px black;
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 h2{
