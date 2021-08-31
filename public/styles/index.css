@@ -127,10 +127,43 @@ a:hover{
     text-decoration: none !important;
 }
 
-.fa{
+.fab{
     color: var(--white-color);
     font-size: x-large;
     font-weight: normal;
+}
+
+.top1 {
+    color: var(--primary-color);
+    font-weight: bolder;
+}
+
+/** Data tables */
+.table-dark > thead {
+    background-color: var(--black-color) !important;
+}
+.dataTables_length, .dataTables_filter, .dataTables_paginate, .dataTables_wrapper .dataTables_paginate .paginate_button,
+.dataTables_info, #tableResultats_previous, #tableResultats_next, select[name="tableResultats_length"], input[type="search"]  {
+    color: var(--white-color) !important;
+}
+select[name="tableResultats_length"] > option, .dataTables_wrapper .dataTables_paginate .paginate_button.current{
+    color: var(--black-color) !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: none;
+    border-color: rgba(0, 0, 0, 0);
+}
+tr.even {
+    background-color: #080808 !important;
+}
+tr.even>.sorting_1, tr.even>.sorting_2{
+    background-color: #0a0a0a !important;
+}
+tr.odd {
+    background-color: #101010 !important;
+}
+tr.odd>.sorting_1, tr.odd>.sorting_2{
+    background-color: #121212 !important;
 }
 
 /** Footer */
@@ -139,11 +172,11 @@ footer{
     bottom: 0;
     z-index: 1;
 }
-.div-footer a > .fa{
+.div-footer a > .fab{
     margin: -5px 5px 5px 5px;
     transition: all .5s;
 }
-.div-footer a > .fa:hover{
+.div-footer a > .fab:hover{
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
 }
 

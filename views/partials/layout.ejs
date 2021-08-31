@@ -6,6 +6,7 @@ const pageName = new Map()
     .set("actualites", "Actualités")
     .set("lineup", "Line-up")
     .set("stream", "Web TV")
+    .set("resultats", "Résultats")
     .set("aboutus", "A propos")
     .set("recrutement", "Nous rejoindre")
     .set("error", "Erreur 404")
@@ -25,12 +26,15 @@ function getTitre(){
 
     <link rel="icon" type="image/png" href="./logo.png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="./styles/segoeui.css" />  
     <link rel="stylesheet" type="text/css" href="./styles/index.css" />
 
     <!-- ALL THE SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.0/sorting/date-eu.js"></script>
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
     <script type="text/javascript" src="./scripts/dynamic.js" defer></script>

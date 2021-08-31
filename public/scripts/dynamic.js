@@ -51,3 +51,20 @@ $(".navbar").on('click', 'a:not([data-toggle])', function (event) {
         document.title = `TMS - ${pageName.get(body)}`
     }
 })
+
+/**
+ * Load the datatable
+ */
+$(document).ready(function(){
+    if(window.$("#tableResultats")){
+        window.$("#tableResultats").DataTable({
+            "language": {"url": "https://cdn.datatables.net/plug-ins/1.11.0/i18n/fr_fr.json"},
+            "columnDefs": [
+                {type: "date-eu", targets: 0}
+            ],
+            "order": [
+                [1,"desc"], [0, "desc"]
+            ]
+        })
+    }
+})

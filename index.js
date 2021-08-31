@@ -13,6 +13,7 @@ const path = require('path')
  */
 const Membres = require('./modules/membres')
 const Pages = require('./modules/pages')
+const Resultats = require('./modules/resultats')
 
 /**
  * Setup the express lib
@@ -26,6 +27,7 @@ app.set("view engine", "ejs")
  */
 Pages.loadPages()
 Membres.loadMembres()
+Resultats.loadResultats()
 
 /**
  * Pages
@@ -38,6 +40,9 @@ app.get("/actualites", function(req, res){
 })
 app.get("/lineup", function(req, res){
     Membres.getPage(req, res)
+})
+app.get("/resultats", function(req, res){
+    Resultats.getPage(req, res)
 })
 app.get("/aboutus", function(req, res){
     res.render("partials/layout", {body: "aboutus"})
@@ -56,6 +61,7 @@ app.get("/update", function(req, res){ //TODO: Changer lien (clé ? post?)
     console.log("Mise a jour des données...")
     Pages.loadPages()
     Membres.loadMembres()
+    Resultats.loadResultats()
     res.end()
 })
 app.get("/planning", function(req, res){

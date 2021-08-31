@@ -23,7 +23,10 @@ module.exports = class Pages{
 
 
     static async getPage(titre, req, res){
-        const data = pages.get(titre)
+        let data
+        do{
+            data = pages.get(titre)
+        }while(!data)
 
         res.render("partials/layout", {body: "unparse",
             titre: titre,

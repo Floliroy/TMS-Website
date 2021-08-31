@@ -41,6 +41,17 @@ gsap.set(loader, {
 })
 barba.hooks.enter(function(){
     window.scrollTo(window.scrollX, 0)
+    if(window.$("#tableResultats")){
+        window.$("#tableResultats").DataTable({
+            "language": {"url": "https://cdn.datatables.net/plug-ins/1.11.0/i18n/fr_fr.json"},
+            "columnDefs": [
+                {type: "date-eu", targets: 0}
+            ],
+            "order": [
+                [1,"desc"], [0, "desc"]
+            ]
+        })
+    }
 })
 //Barba init
 barba.init({

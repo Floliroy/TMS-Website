@@ -31,7 +31,7 @@ module.exports = class Membres{
         await doc.loadInfo()
         const sheet = doc.sheetsById["0"]
         const rows = await sheet.getRows()
-        for await(let row of rows){
+        for (const row of rows){
             let membre = new Membre(row.Pseudo)
 
             membre.tft = row.TFT == "TRUE"

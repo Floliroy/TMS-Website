@@ -1,0 +1,29 @@
+<h1 class="pt-5 pb-5">Résultats</h1>
+
+<table id="tableResultats" class="display table table-dark" aria-describedby="Table des résultats globaux de la TMS">
+    <thead class="text-center">
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Hot</th>
+            <th scope="col" data-orderable="false">Tournoi</th>
+            <th scope="col" data-orderable="false">Top</th>
+            <th scope="col" data-orderable="false">Joueur</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%for(const resultat of resultats){%>
+            <tr>
+                <td class="text-center"><%=resultat.date%></td>
+                <td class="text-center"><%=resultat.majeur%></td>
+                <td><%=resultat.tournoi%></td>
+                <td class="text-center <%=resultat.top == 1 ? "top1" : ""%>"><%=resultat.top%></td>
+                <td>
+                    <%=resultat.joueur%>
+                    <%if(resultat.duo){%>
+                        <small><em>(duo <%=resultat.duo%>)</em></small>
+                    <%}%>  
+                </td>
+            </tr>
+        <%}%>  
+    </tbody>
+</table>
