@@ -56,9 +56,10 @@ $(".navbar").on('click', 'a:not([data-toggle])', function (event) {
  * Load the datatable
  */
 $(document).ready(function(){
-    if(window.$("#tableResultats").length){
+    if($("#tableResultats").length > 0){
         window.$("#tableResultats").DataTable({
             "language": {"url": "https://cdn.datatables.net/plug-ins/1.11.0/i18n/fr_fr.json"},
+            "retrieve": true,
             "columnDefs": [
                 {type: "date-eu", targets: 0}
             ],
