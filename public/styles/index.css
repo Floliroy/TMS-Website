@@ -99,7 +99,6 @@ nav ul li a.nav-link:hover {
 
 /** Main */
 h1{
-    color: var(--primary-color);
     font-family: 'Ridgeline201';
     text-align: center;
     text-shadow: 2px 2px 3px black;
