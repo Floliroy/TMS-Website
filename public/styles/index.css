@@ -139,20 +139,27 @@ a:hover{
 }
 
 /** Data tables */
-.table-dark > thead {
+.table-dark > thead{
+    background: none !important;
     background-color: var(--black-color) !important;
 }
 .dataTables_length, .dataTables_filter, .dataTables_paginate, .dataTables_wrapper .dataTables_paginate .paginate_button,
-.dataTables_info, #tableResultats_previous, #tableResultats_next, select[name="tableResultats_length"], input[type="search"]  {
+.dataTables_info, #tableResultats_previous, #tableResultats_next, select[name="tableResultats_length"], input[type="search"],
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
     color: var(--white-color) !important;
 }
-select[name="tableResultats_length"] > option, .dataTables_wrapper .dataTables_paginate .paginate_button.current{
-    color: var(--black-color) !important;
+select[name="tableResultats_length"], input[type="search"] {
+    background-color: rgba(0, 0, 0, 0.77) !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    border-color: rgba(0, 0, 0, 0);
+    background: linear-gradient(to top, black 0%, #0a0a0a 100%);
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
     background: none;
     border-color: rgba(0, 0, 0, 0);
 }
+
 tr.even {
     background-color: #080808 !important;
 }
