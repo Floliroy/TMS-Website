@@ -35,6 +35,7 @@ const pageName = new Map()
     .set("lineup", "Line-up")
     .set("stream", "Web TV")
     .set("aboutus", "A propos")
+    .set("resultats", "Résultats")
     .set("recrutement", "Nous rejoindre")
     .set("error", "Erreur 404")
 $(".navbar").on('click', 'a:not([data-toggle])', function (event) {
