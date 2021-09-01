@@ -65,7 +65,7 @@ module.exports = class Membres{
     }
 
     static async getPage(req, res){
-        const roles = ["Toplane", "Jungle", "Midlane", "ADCarry", "Support"]
+        const roles = ["Toplane", "Jungle", "Midlane", "ADCarry", "Support", "Coach"]
         let players = new Array()
         if(req.query.lineup == "lol"){
             for(const role of roles){
