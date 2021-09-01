@@ -73,13 +73,13 @@ app.get("/update", function(req, res){
             res.send(`Requete update ${req.query.module} ok !`)
             break;
         case "actualites":
-            Pages.loadPages()
+            Actualites.loadPages()
             res.send(`Requete update ${req.query.module} ok !`)
             break;
         case "all":
             Membres.loadMembres()
             Resultats.loadResultats()
-            Pages.loadPages()
+            Actualites.loadPages()
             res.send(`Requete update ${req.query.module} ok !`)
             break;
     }
