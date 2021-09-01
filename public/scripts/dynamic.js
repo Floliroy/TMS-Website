@@ -29,28 +29,12 @@ $(document).on('click', 'header a', function(event) {
 /**
  * Hide navbar on click
  */
-const pageName = new Map()
-    .set("index", "Accueil")
-    .set("actualites", "Actualités")
-    .set("lineup", "Line-up")
-    .set("stream", "Web TV")
-    .set("aboutus", "A propos")
-    .set("resultats", "Résultats")
-    .set("recrutement", "Nous rejoindre")
-    .set("error", "Erreur 404")
 $(".navbar").on('click', 'a:not([data-toggle])', function (event) {
     //Close menu
     $(".navbar-collapse").collapse("hide")
 
     //Close submenu
     $(".show").removeClass("show")
-
-    //Change page title    
-    const decomposition = event.currentTarget.href.split("/")
-    const body = decomposition[decomposition.length-1]
-    if(pageName.get(body)){
-        document.title = `TMS - ${pageName.get(body)}`
-    }
 })
 
 /**

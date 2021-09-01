@@ -111,14 +111,33 @@ h2{
 }
 
 button.button{
+    color: var(--white-color);
     background-color: var(--primary-color);
     border-radius: 0.3rem;
     border-color: var(--primary-color);
     padding: 0;
 }
+button.largeButton{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    border-radius: 0.3rem;
+    border-color: var(--primary-color);
+    padding: 5px 10px 5px 10px;
+}
+
+.actualite{
+    background-color: rgba(18, 18, 18, 0.77);
+    border-radius: 0.25rem;
+    margin-bottom: 3rem;
+}
+
+.actualite-part-bottom{
+    position: absolute;
+    bottom: 5px;
+}
 
 img.clickable{
-    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.7);
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.77);
     transition: transform 0.5s;
 }
 img.clickable:hover {

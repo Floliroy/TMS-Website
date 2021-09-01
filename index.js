@@ -12,7 +12,7 @@ const path = require('path')
  * My own libraries
  */
 const Membres = require('./modules/membres')
-const Pages = require('./modules/pages')
+const Actualites = require('./modules/actualites')
 const Resultats = require('./modules/resultats')
 
 /**
@@ -25,7 +25,7 @@ app.set("view engine", "ejs")
 /**
  * Load custom pages and members from google
  */
-Pages.loadPages()
+Actualites.loadActualites()
 Membres.loadMembres()
 Resultats.loadResultats()
 
@@ -36,7 +36,10 @@ app.get("/", function(req, res){
     res.render("partials/layout", {body: "index"})
 })
 app.get("/actualites", function(req, res){
-    Pages.getPage("Actualités", req, res)
+    Actualites.getActualites(req, res)
+})
+app.get("/actualite", function(req, res){
+    Actualites.getPage(req, res)
 })
 app.get("/lineup", function(req, res){
     Membres.getPage(req, res)
@@ -57,11 +60,29 @@ app.get("/recrutement", function(req, res){
 /**
  * Lien utiles
  */
-app.get("/update", function(req, res){ //TODO: Changer lien (clé ? post?)
-    console.log("Mise a jour des données...")
-    Pages.loadPages()
-    Membres.loadMembres()
-    Resultats.loadResultats()
+app.get("/update", function(req, res){
+    if(req.query.key != process.env.UPDATE_KEY) return res.end()
+
+    switch(req.query.module){
+        case "membres":
+            Membres.loadMembres()
+            console.log(`Requete update ${req.query.module} ok !`)
+            break;
+        case "resultats":
+            Resultats.loadResultats()
+            console.log(`Requete update ${req.query.module} ok !`)
+            break;
+        case "actualites":
+            Pages.loadPages()
+            console.log(`Requete update ${req.query.module} ok !`)
+            break;
+        case "all":
+            Membres.loadMembres()
+            Resultats.loadResultats()
+            Pages.loadPages()
+            console.log(`Requete update ${req.query.module} ok !`)
+            break;
+    }
     res.end()
 })
 app.get("/planning", function(req, res){
@@ -82,7 +103,7 @@ app.use(function (req, res){
 app.use(turbolinks.redirect)
 app.use(turbolinks.location)
 app.listen(1248, function(){
-    console.log("Server running on port 1248!")
+    console.log("Serveur démarré sur le port 1248!")
 })
 
 /**
