@@ -61,11 +61,6 @@ app.get("/recrutement", function(req, res){
  * Lien utiles
  */
 app.get("/update", function(req, res){
-    console.log(req.query)
-    console.log(`|${req.query.key}|`)
-    console.log(`|${process.env.UPDATE_KEY}|`)
-    console.log(req.query.key == process.env.UPDATE_KEY)
-    console.log(req.query.module == "membres")
     if(req.query.key != process.env.UPDATE_KEY) return res.end()
 
     switch(req.query.module){
