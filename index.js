@@ -66,24 +66,23 @@ app.get("/update", function(req, res){
     switch(req.query.module){
         case "membres":
             Membres.loadMembres()
-            console.log(`Requete update ${req.query.module} ok !`)
+            res.send(`Requete update ${req.query.module} ok !`)
             break;
         case "resultats":
             Resultats.loadResultats()
-            console.log(`Requete update ${req.query.module} ok !`)
+            res.send(`Requete update ${req.query.module} ok !`)
             break;
         case "actualites":
             Pages.loadPages()
-            console.log(`Requete update ${req.query.module} ok !`)
+            res.send(`Requete update ${req.query.module} ok !`)
             break;
         case "all":
             Membres.loadMembres()
             Resultats.loadResultats()
             Pages.loadPages()
-            console.log(`Requete update ${req.query.module} ok !`)
+            res.send(`Requete update ${req.query.module} ok !`)
             break;
     }
-    res.end()
 })
 app.get("/planning", function(req, res){
     res.sendFile(path.resolve("../../Shared/planning.png"))
