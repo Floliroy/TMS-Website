@@ -61,6 +61,7 @@ app.get("/recrutement", function(req, res){
  * Lien utiles
  */
 app.get("/update", function(req, res){
+    console.log(req.query)
     if(req.query.key != process.env.UPDATE_KEY) return res.end()
 
     switch(req.query.module){

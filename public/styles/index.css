@@ -130,10 +130,11 @@ button.largeButton{
     border-radius: 0.25rem;
     margin-bottom: 3rem;
 }
-
-.actualite-part-bottom{
-    position: absolute;
-    bottom: 5px;
+@media screen and (min-width: 768px) {
+    .actualite-part-bottom{
+        position: absolute;
+        bottom: 5px;
+    }
 }
 
 img.clickable{
